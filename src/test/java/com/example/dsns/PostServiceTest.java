@@ -1,6 +1,5 @@
 package com.example.dsns;
 
-import javafx.geometry.Pos;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,7 +14,7 @@ public class PostServiceTest {
 	@Before
 	public void setUp() throws Exception {
 		PostRepository mock = mock(PostRepository.class);
-		when(mock.insert()).thenReturn(new Identifier("1"));
+		when(mock.create()).thenReturn(new Identifier("1"));
 		sut = new PostService(mock);
 	}
 
