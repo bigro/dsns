@@ -15,6 +15,6 @@ public class PostService {
 	}
 
 	public Identifier write(Post post) {
-		return postRepository.create();
+		return postRepository.create(post);
 	}
 }
