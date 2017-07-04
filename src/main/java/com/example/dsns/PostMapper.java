@@ -6,5 +6,5 @@ import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface PostMapper {
-	Identifier create(@Param("post") Post post);
+	Long create(@Param("post") Post post);
 }

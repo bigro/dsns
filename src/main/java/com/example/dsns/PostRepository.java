@@ -1,6 +1,5 @@
 package com.example.dsns;
 
-import javafx.geometry.Pos;
 import org.springframework.stereotype.Repository;
 
 @Repository
@@ -13,6 +12,6 @@ public class PostRepository {
 	}
 
 	public Identifier create(Post post) {
-		return postMapper.create(post);
+		return new Identifier(postMapper.create(post));
 	}
 }
