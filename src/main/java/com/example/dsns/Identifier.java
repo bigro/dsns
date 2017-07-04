@@ -6,4 +6,8 @@ public class Identifier {
 	public Identifier(String value) {
 		this.value = value;
 	}
+
+	public Identifier(Long value) {
+		this.value = Long.toString(value);
+	}
 }

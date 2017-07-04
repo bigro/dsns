@@ -4,6 +4,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
@@ -14,7 +15,7 @@ public class PostServiceTest {
 	@Before
 	public void setUp() throws Exception {
 		PostRepository mock = mock(PostRepository.class);
-		when(mock.create()).thenReturn(new Identifier("1"));
+		when(mock.create(any(Post.class))).thenReturn(new Identifier("1"));
 		sut = new PostService(mock);
 	}
 

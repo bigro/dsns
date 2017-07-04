@@ -3,10 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dsns.PostMapper">
-    <insert id="create">
-    <selectKey keyProperty="identifier" order="BEFORE" resultType="string">
-        SELECT RANDOM_UUID()
-    </selectKey>
-        INSERT INTO post (author, title, contents) VALUES (#{post.author}, #{post.title}, #{post.contents})
+    <insert id="create" useGeneratedKeys="true" keyProperty="post.identifier">
+        INSERT INTO post (author, title, contents) VALUES (#{post.author.value}, #{post.title.value}, #{post.contents.value})
     </insert>
 </mapper>
