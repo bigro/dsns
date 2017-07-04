@@ -7,9 +7,6 @@ public class PostService {
 
 	private PostRepository postRepository;
 
-	public PostService() {
-	}
-
 	public PostService(PostRepository postRepository) {
 		this.postRepository = postRepository;
 	}
