@@ -12,6 +12,7 @@ public class PostRepository {
 	}
 
 	public Identifier create(Post post) {
-		return new Identifier(postMapper.create(post));
+		postMapper.create(post);
+		return post.getIdentifier();
 	}
 }
