@@ -7,9 +7,7 @@ public class Post {
     private Contents contents;
 
     public Post(Author author, Title title, Contents contents) {
-        this.author = author;
-        this.title = title;
-        this.contents = contents;
+        new Post(new Identifier(0L), author,title, contents);
     }
 
     private Post(Identifier identifier, Author author, Title title, Contents contents) {
