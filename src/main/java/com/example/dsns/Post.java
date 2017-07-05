@@ -1,20 +1,27 @@
 package com.example.dsns;
 
 public class Post {
-	private Identifier identifier;
-	private Author author;
-	private Title title;
-	private Contents contents;
+    private Identifier identifier;
+    private Author author;
+    private Title title;
+    private Contents contents;
 
-	public Post(Author author, Title title, Contents contents) {
-		this.author = author;
-		this.title = title;
-		this.contents = contents;
-	}
+    public Post(Author author, Title title, Contents contents) {
+        this.author = author;
+        this.title = title;
+        this.contents = contents;
+    }
 
-	public static Post createEmpty() {
-		return new Post(new Author(""), new Title(""), new Contents(""));
-	}
+    private Post(Identifier identifier, Author author, Title title, Contents contents) {
+        this.identifier = identifier;
+        this.author = author;
+        this.title = title;
+        this.contents = contents;
+    }
+
+    public static Post createEmpty() {
+        return new Post(new Identifier(0L), new Author(""), new Title(""), new Contents(""));
+    }
 
     public Identifier getIdentifier() {
         return identifier;
