@@ -1,6 +1,9 @@
 package e2e;
 
+import com.example.dsns.Post;
+import e2e.page.PostPage;
 import org.fluentlenium.adapter.junit.FluentTest;
+import org.fluentlenium.core.annotation.Page;
 import org.fluentlenium.core.hook.wait.Wait;
 import org.junit.Before;
 import org.junit.Test;
@@ -13,14 +16,18 @@ import static org.assertj.core.api.Assertions.assertThat;
 public class PostTest extends FluentTest {
     private String driverPath;
 
+    @Page
+    PostPage postPage;
+
     @Before
     public void setUp() throws Exception {
-        goTo("http://localhost:8080/");
+        goTo(postPage);
     }
 
     @Test
     public void 記事を投稿できること() {
-        assertThat(window().title()).contains("記事投稿");
+        postPage.fillAuthor("Unknown").fillTitle("Title").fillContents("Dummy Dummy").post();
+        postPage.isAt();
     }
 
     @Override
