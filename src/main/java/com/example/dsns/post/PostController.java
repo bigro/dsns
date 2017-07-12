@@ -1,6 +1,5 @@
 package com.example.dsns.post;
 
-import com.example.dsns.article.Article;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,11 +16,11 @@ public class PostController {
 
     @ModelAttribute("post")
     Post post() {
-        return new Post(Article.createEmpty());
+        return Post.createEmpty();
     }
 
     @GetMapping("form")
-    public String form(){
+    public String form() {
         return "post/form";
     }
 

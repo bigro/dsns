@@ -16,4 +16,8 @@ public class Post {
     public void setArticle(Article article) {
         this.article = article;
     }
+
+    public static Post createEmpty() {
+        return new Post(Article.createEmpty());
+    }
 }
