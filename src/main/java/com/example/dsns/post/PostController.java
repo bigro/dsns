@@ -1,4 +1,4 @@
-package com.example.dsns;
+package com.example.dsns.post;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -20,13 +20,13 @@ public class PostController {
     }
 
     @GetMapping("form")
-    public String form(){
+    public String form() {
         return "post/form";
     }
 
-    @PostMapping("write")
+    @PostMapping()
     public String write(@ModelAttribute("post") Post post) {
-        postService.write(post);
+        postService.post(post);
         return "redirect:/post/form";
     }
 }

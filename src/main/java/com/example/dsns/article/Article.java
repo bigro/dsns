@@ -1,24 +1,26 @@
-package com.example.dsns;
+package com.example.dsns.article;
 
-public class Post {
+import com.example.dsns.author.Author;
+
+public class Article {
     private Identifier identifier;
     private Author author;
     private Title title;
     private Contents contents;
 
-    public Post(Author author, Title title, Contents contents) {
-        new Post(new Identifier(0L), author,title, contents);
+    public Article(Author author, Title title, Contents contents) {
+        new Article(new Identifier(0L), author,title, contents);
     }
 
-    private Post(Identifier identifier, Author author, Title title, Contents contents) {
+    private Article(Identifier identifier, Author author, Title title, Contents contents) {
         this.identifier = identifier;
         this.author = author;
         this.title = title;
         this.contents = contents;
     }
 
-    public static Post createEmpty() {
-        return new Post(new Identifier(0L), new Author(""), new Title(""), new Contents(""));
+    public static Article createEmpty() {
+        return new Article(new Identifier(0L), new Author(""), new Title(""), new Contents(""));
     }
 
     public Identifier getIdentifier() {
