@@ -1,6 +1,5 @@
 package e2e;
 
-import com.example.dsns.Post;
 import e2e.page.PostPage;
 import org.fluentlenium.adapter.junit.FluentTest;
 import org.fluentlenium.core.annotation.Page;

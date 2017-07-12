@@ -1,9 +1,10 @@
-package com.example.dsns;
+package com.example.dsns.author;
 
-public class Title {
+public class Author {
+
 	private String value;
 
-	public Title(String value) {
+	public Author(String value) {
 		this.value = value;
 	}
 
@@ -11,5 +12,4 @@ public class Title {
 	public String toString() {
 		return value;
 	}
-
 }

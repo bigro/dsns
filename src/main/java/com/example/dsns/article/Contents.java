@@ -1,4 +1,4 @@
-package com.example.dsns;
+package com.example.dsns.article;
 
 public class Contents {
 

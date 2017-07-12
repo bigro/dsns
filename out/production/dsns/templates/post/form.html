@@ -14,7 +14,7 @@
 <body>
 <h1>記事投稿</h1>
 <div class="container">
-    <form class="form-horizontal" th:action="@{/post/write}" th:object="${post}" method="post">
+    <form class="form-horizontal" th:action="@{/article/write}" th:object="${article}" method="article">
         <div class="form-group row">
             <label class="control-label col-sm-2" for="author">投稿者:</label>
             <input type="text" id="author" th:field="*{author}">

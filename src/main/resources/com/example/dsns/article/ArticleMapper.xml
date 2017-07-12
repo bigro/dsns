@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.example.dsns.article.PostMapper">
+<mapper namespace="com.example.dsns.article.ArticleMapper">
     <insert id="create" useGeneratedKeys="true" keyProperty="article.identifier.value" keyColumn="identifier">
         INSERT INTO article (author, title, contents) VALUES (#{article.author.value}, #{article.title.value}, #{article.contents.value})
     </insert>
