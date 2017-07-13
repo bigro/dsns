@@ -27,6 +27,6 @@ public class PostController {
     @PostMapping()
     public String write(@ModelAttribute("post") Post post) {
         postService.post(post);
-        return "redirect:/post/form";
+        return "redirect:/articles/list";
     }
 }

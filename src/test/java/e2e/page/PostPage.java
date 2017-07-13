@@ -1,5 +1,6 @@
 package e2e.page;
 
+import com.example.dsns.search.Search;
 import org.fluentlenium.core.FluentPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -31,7 +32,8 @@ public class PostPage extends FluentPage {
         return this;
     }
 
-    public void post() {
+    public SearchPage post() {
         $("#post-button").click();
+        return newInstance(SearchPage.class);
     }
 }
