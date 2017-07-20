@@ -1,18 +1,14 @@
 package e2e;
 
 import com.ninja_squad.dbsetup.DbSetup;
-import com.ninja_squad.dbsetup.destination.DriverManagerDestination;
 import com.ninja_squad.dbsetup.operation.Operation;
 import e2e.page.PostPage;
 import e2e.page.SearchPage;
 import org.assertj.core.api.SoftAssertions;
-import org.fluentlenium.adapter.junit.FluentTest;
 import org.fluentlenium.core.annotation.Page;
 import org.fluentlenium.core.hook.wait.Wait;
 import org.junit.Before;
 import org.junit.Test;
-
-import java.io.File;
 
 import static com.ninja_squad.dbsetup.Operations.deleteAllFrom;
 

@@ -3,7 +3,6 @@ package e2e.page;
 import org.fluentlenium.core.FluentPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
-import static org.assertj.core.api.Assertions.in;
 
 public class SearchPage extends FluentPage {
 
