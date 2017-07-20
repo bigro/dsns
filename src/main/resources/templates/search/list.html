@@ -20,7 +20,7 @@
             <th>タイトル</th>
             <th>内容</th>
         </tr>
-        <tr th:each="article : ${search.getArticles().getList()}">
+        <tr class="row" th:each="article : ${search.getArticles().getList()}">
             <td class="author" th:text="${article.author}">たなか</td>
             <td class="title" th:text="${article.title}">電子工作とは</td>
             <td class="contents" th:text="${article.contents}">電子工作しましたよ</td>

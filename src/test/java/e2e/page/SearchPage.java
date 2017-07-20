@@ -14,7 +14,7 @@ public class SearchPage extends FluentPage {
 
     @Override
     public String getUrl() {
-        return "http://localhost:8080/article/list";
+        return "http://localhost:8080/articles/list";
     }
 
     public String author(int index) {
@@ -27,5 +27,9 @@ public class SearchPage extends FluentPage {
 
     public String contents(int index) {
         return $(".contents").get(index).text();
+    }
+
+    public int row() {
+        return $(".row").size();
     }
 }

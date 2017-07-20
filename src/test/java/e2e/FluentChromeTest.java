@@ -11,10 +11,11 @@ public class FluentChromeTest extends FluentTest {
     private final String JDBC_URL = "jdbc:h2:tcp://localhost:9092/mem:testdb";
     private final String DB_USER = "sa";
     private final String DB_PASSWORD = "";
+    private final DriverManagerDestination driverManagerDestination = new DriverManagerDestination(JDBC_URL, DB_USER, DB_PASSWORD);
     private String driverPath;
 
     protected DriverManagerDestination getDriverManagerDestination() {
-        return new DriverManagerDestination(JDBC_URL, DB_USER, DB_PASSWORD);
+        return driverManagerDestination;
     }
 
     @Override
