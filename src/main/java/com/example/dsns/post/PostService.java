@@ -1,6 +1,5 @@
 package com.example.dsns.post;
 
-import com.example.dsns.article.Article;
 import com.example.dsns.article.ArticleRepository;
 import com.example.dsns.article.Identifier;
 import org.springframework.stereotype.Service;

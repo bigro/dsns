@@ -8,11 +8,14 @@ public class Article {
     private Title title;
     private Contents contents;
 
-    public Article(Author author, Title title, Contents contents) {
-        new Article(new Identifier(0L), author,title, contents);
+    private Article() {
     }
 
-    private Article(Identifier identifier, Author author, Title title, Contents contents) {
+    public Article(Author author, Title title, Contents contents) {
+        this(new Identifier(0L), author, title, contents);
+    }
+
+    public Article(Identifier identifier, Author author, Title title, Contents contents) {
         this.identifier = identifier;
         this.author = author;
         this.title = title;

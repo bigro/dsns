@@ -3,7 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.dsns.article.ArticleMapper">
+    <resultMap id="article" type="com.example.dsns.article.Article">
+        <id property="identifier.value" column="identifier" />
+        <result property="author.value" column="author"/>
+        <result property="title.value" column="title"/>
+        <result property="contents.value" column="contents"/>
+    </resultMap>
+
     <insert id="create" useGeneratedKeys="true" keyProperty="article.identifier.value" keyColumn="identifier">
         INSERT INTO article (author, title, contents) VALUES (#{article.author.value}, #{article.title.value}, #{article.contents.value})
     </insert>
+
+    <select id="searchAll" resultMap="article">
+        SELECT * FROM article
+    </select>
 </mapper>

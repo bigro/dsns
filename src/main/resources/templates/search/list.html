@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>記事一覧</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          th:href="@{/webjars/bootstrap/3.3.7/css/bootstrap.min.css}" rel="stylesheet"/>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+            th:src="@{/webjars/jquery/3.2.1/jquery.min.js}"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"
+            th:src="@{/webjars/bootstrap/3.3.7/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<h1>記事一覧</h1>
+<div class="center-block" style="width: 80%;">
+    <table class="table">
+        <tr>
+            <th>投稿者</th>
+            <th>タイトル</th>
+            <th>内容</th>
+        </tr>
+        <tr class="row" th:each="article : ${search.getArticles().getList()}">
+            <td class="author" th:text="${article.author}">たなか</td>
+            <td class="title" th:text="${article.title}">電子工作とは</td>
+            <td class="contents" th:text="${article.contents}">電子工作しましたよ</td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
