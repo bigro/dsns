@@ -20,11 +20,7 @@ import static com.ninja_squad.dbsetup.Operations.deleteAllFrom;
 アプリケーションを gradle -Dspring.profiles.active=local bootRun で起動してください。
  */
 @Wait
-public class PostTest extends FluentTest {
-    private final String JDBC_URL = "jdbc:h2:tcp://localhost:9092/mem:testdb";
-    private final String DB_USER = "sa";
-    private final String DB_PASSWORD = "";
-    private String driverPath;
+public class PostTest extends FluentChromeTest {
 
     @Page
     PostPage postPage;
@@ -32,7 +28,7 @@ public class PostTest extends FluentTest {
 
     @Before
     public void setUp() throws Exception {
-        DbSetup dbSetup = new DbSetup(new DriverManagerDestination(JDBC_URL, DB_USER, DB_PASSWORD), DELETE_ALL);
+        DbSetup dbSetup = new DbSetup(getDriverManagerDestination(), DELETE_ALL);
         dbSetup.launch();
         goTo(postPage);
     }
@@ -46,13 +42,5 @@ public class PostTest extends FluentTest {
         softAssertions.assertThat(searchPage.title(0)).isEqualTo("Title");
         softAssertions.assertThat(searchPage.contents(0)).isEqualTo("Dummy Dummy");
         softAssertions.assertAll();
-    }
-
-    @Override
-    public String getWebDriver() {
-        driverPath = "src/test/driver/chromedriver.exe";
-        File file = new File(driverPath);
-        System.setProperty("webdriver.chrome.driver", file.getPath());
-        return "chrome";
     }
 }
