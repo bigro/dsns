@@ -1,5 +1,8 @@
 package e2e;
 
+import com.ninja_squad.dbsetup.DbSetup;
+import com.ninja_squad.dbsetup.destination.DriverManagerDestination;
+import com.ninja_squad.dbsetup.operation.Operation;
 import e2e.page.PostPage;
 import e2e.page.SearchPage;
 import org.assertj.core.api.SoftAssertions;
@@ -11,17 +14,26 @@ import org.junit.Test;
 
 import java.io.File;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import static com.ninja_squad.dbsetup.Operations.deleteAllFrom;
 
+/*
+アプリケーションを gradle -Dspring.profiles.active=local bootRun で起動してください。
+ */
 @Wait
 public class PostTest extends FluentTest {
+    private final String JDBC_URL = "jdbc:h2:tcp://localhost:9092/mem:testdb";
+    private final String DB_USER = "sa";
+    private final String DB_PASSWORD = "";
     private String driverPath;
 
     @Page
     PostPage postPage;
+    public static final Operation DELETE_ALL = deleteAllFrom("ARTICLE");
 
     @Before
     public void setUp() throws Exception {
+        DbSetup dbSetup = new DbSetup(new DriverManagerDestination(JDBC_URL, DB_USER, DB_PASSWORD), DELETE_ALL);
+        dbSetup.launch();
         goTo(postPage);
     }
 
