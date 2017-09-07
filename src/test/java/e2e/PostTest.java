@@ -12,15 +12,12 @@ import org.junit.Test;
 
 import static com.ninja_squad.dbsetup.Operations.deleteAllFrom;
 
-/*
-アプリケーションを gradle -Dspring.profiles.active=local bootRun で起動してください。
- */
 @Wait
 public class PostTest extends FluentChromeTest {
 
     @Page
     PostPage postPage;
-    public static final Operation DELETE_ALL = deleteAllFrom("ARTICLE");
+    public static final Operation DELETE_ALL = deleteAllFrom("article");
 
     @Before
     public void setUp() throws Exception {

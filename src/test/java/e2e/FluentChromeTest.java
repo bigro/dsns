@@ -8,9 +8,9 @@ import java.io.File;
 
 @Wait
 public class FluentChromeTest extends FluentTest {
-    private final String JDBC_URL = "jdbc:h2:tcp://localhost:9092/mem:testdb";
-    private final String DB_USER = "sa";
-    private final String DB_PASSWORD = "";
+    private final String JDBC_URL = "jdbc:mysql://localhost/electronix";
+    private final String DB_USER = "electronix";
+    private final String DB_PASSWORD = "pass";
     private final DriverManagerDestination driverManagerDestination = new DriverManagerDestination(JDBC_URL, DB_USER, DB_PASSWORD);
     private String driverPath;
 

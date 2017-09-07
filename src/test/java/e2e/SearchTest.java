@@ -20,7 +20,7 @@ public class SearchTest extends FluentChromeTest {
 
     @Page
     SearchPage searchPage;
-    public static final Operation DELETE_ALL = deleteAllFrom("ARTICLE");
+    public static final Operation DELETE_ALL = deleteAllFrom("article");
 
     @Before
     public void setUp() throws Exception {
@@ -30,7 +30,7 @@ public class SearchTest extends FluentChromeTest {
 
     @Test
     public void 全ての記事を検索できること() {
-        Operation operation = insertInto("ARTICLE")
+        Operation operation = insertInto("article")
                 .columns("author", "title", "contents")
                 .values("Yamada", "Title1", "contents1")
                 .values("Tanaka", "Title2", "contents2")

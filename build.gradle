@@ -10,6 +10,16 @@ buildscript {
 	}
 }
 
+plugins {
+	id "org.flywaydb.flyway" version "4.2.0"
+}
+flyway {
+	url = 'jdbc:mysql://localhost/electronix'
+	user = 'electronix'
+	password = 'pass'
+	schemas = ['electronix']
+}
+
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
@@ -33,6 +43,7 @@ dependencies {
 	compile('org.flywaydb:flyway-core:4.2.0')
 	compile('org.webjars:jquery:3.2.1')
 	compile("org.webjars:bootstrap:3.3.7")
+	compile("mysql:mysql-connector-java:5.1.13")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.fluentlenium:fluentlenium-junit:3.2.0')
 	testCompile('org.fluentlenium:fluentlenium-assertj:3.2.0')
