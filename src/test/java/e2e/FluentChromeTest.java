@@ -20,7 +20,7 @@ public class FluentChromeTest extends FluentTest {
 
     @Override
     public String getWebDriver() {
-        driverPath = "src/test/driver/chromedriver.exe";
+        driverPath = "src/test/driver/chromedriver";
         File file = new File(driverPath);
         System.setProperty("webdriver.chrome.driver", file.getPath());
         return "chrome";
