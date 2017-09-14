@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script src="https://cdn.ckeditor.com/4.7.3/standard/ckeditor.js"></script>
 </head>
 <body>
 <div layout:fragment="content" class="ui very padded container basic content">
@@ -22,8 +23,12 @@
             <input type="text" id="title" th:field="*{article.title}" placeholder="タイトル">
         </div>
         <div class="field">
-            <label>記事</label>
-            <textarea rows="20" id="contents" th:field="*{article.contents}"></textarea>
+            <textarea id="contents" rows="10" cols="80" th:field="*{article.contents}">
+                記事
+            </textarea>
+            <script>
+                CKEDITOR.replace( 'contents' );
+            </script>
         </div>
         <button id="post-button" class="ui primary basic button" type="submit">投稿</button>
     </form>
