@@ -1,0 +1,9 @@
+.content {
+    margin-top: 30px;
+}
+
+li.article-list {
+    display: inline-block;
+    width: 33%;
+    margin-bottom: 30px;
+}

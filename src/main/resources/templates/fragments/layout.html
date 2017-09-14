@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Electronix</title>
+</head>
+<body>
+<div class="ui attached stackable menu">
+    <div class="ui container">
+        <a class="item" th:href="@{/articles/list}">
+            <i class="newspaper icon"></i> 記事一覧
+        </a>
+        <a class="item" th:href="@{/post/form}">
+            <i class="file text icon"></i> 投稿
+        </a>
+        <a class="item">
+            <i class="mail icon"></i> Messages
+        </a>
+        <div class="ui simple dropdown item">
+            More
+            <i class="dropdown icon"></i>
+            <div class="menu">
+                <a class="item"><i class="edit icon"></i> Edit Profile</a>
+                <a class="item"><i class="globe icon"></i> Choose Language</a>
+                <a class="item"><i class="settings icon"></i> Account Settings</a>
+            </div>
+        </div>
+        <div class="right item">
+            <div class="ui input"><input type="text" placeholder="Search..."></div>
+        </div>
+    </div>
+</div>
+<div layout:fragment="content" class="ui very padded text container basic">
+    <h2 class="ui header">Dogs Roles with Humans</h2>
+    <p>サンプルコンテンツ</p>
+    <p>Domestic dogs inherited complex behaviors, such as bite inhibition,
+        from their wolf ancestors, which would have been pack hunters with complex body language.
+        These sophisticated forms of social cognition and communication may account for their trainability,
+        playfulness, and ability to fit into human households and social situations,
+        and these attributes have given dogs a relationship with humans that has enabled them to become one of t
+        he most successful species on the planet today.
+    </p>
+</div>
+</body>
+</html>
