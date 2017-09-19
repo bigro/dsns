@@ -12,4 +12,6 @@ public interface ArticleMapper {
     List<Article> searchAll();
 
     Article getBy(@Param("identifier") Identifier identifier);
+
+    void delete(@Param("identifier") Identifier identifier);
 }

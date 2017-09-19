@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}"/>
     <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+    <script type="text/javascript" th:src="@{/javascript/detail.js}"></script>
 </head>
 <body>
 <div layout:fragment="content" class="ui very padded text container basic content" th:object="${article}">
-    <h2 class="ui dividing header" th:text="*{title}">人気記事</h2>
+    <form id="deleteForm" method="post" th:action="@{/articles/{articleId}/delete(articleId=*{identifier})}"></form>
+    <button id="deleteButton" class="mini ui orange button right floated column">削除</button>
+    <h2 class="ui dividing header" th:text="*{title}">タイトル</h2>
     <div th:utext="*{contents}"></div>
 </div>
 </body>

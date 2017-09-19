@@ -17,4 +17,8 @@ public class ArticleService {
     public Article getBy(Identifier identifier) {
         return articleRepository.getBy(identifier);
     }
+
+    public void delete(Identifier identifier) {
+        articleRepository.delete(identifier);
+    }
 }

@@ -71,4 +71,19 @@ public class ArticleServiceTest {
                 .extracting("author", "title", "contents")
                 .contains("Author1", "Title1", "Contents1");
     }
+
+    @Test
+    public void 記事を削除できる() throws Exception {
+        Operation operation = insertInto("article")
+                .columns("identifier", "author", "title", "contents")
+                .values("1", "Author1", "Title1", "Contents1")
+                .build();
+        DbSetup dbSetup = new DbSetup(driverManagerDestination, operation);
+        dbSetup.launch();
+
+        articleService.delete(new Identifier(1L));
+
+        Article actual = articleService.getBy(new Identifier(1L));
+        assertThat(actual).isNull();
+    }
 }

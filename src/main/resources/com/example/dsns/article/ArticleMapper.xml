@@ -22,4 +22,9 @@
         SELECT * FROM article
         WHERE identifier = #{identifier.value}
     </select>
+
+    <delete id="delete">
+        DELETE FROM article
+        WHERE identifier = #{identifier.value}
+    </delete>
 </mapper>
