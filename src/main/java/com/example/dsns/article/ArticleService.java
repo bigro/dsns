@@ -1,18 +1,17 @@
-package com.example.dsns.search;
+package com.example.dsns.article;
 
-import com.example.dsns.article.*;
 import org.springframework.stereotype.Service;
 
 @Service
-public class SearchService {
+public class ArticleService {
     private final ArticleRepository articleRepository;
 
-    public SearchService(ArticleRepository articleRepository) {
+    public ArticleService(ArticleRepository articleRepository) {
         this.articleRepository = articleRepository;
     }
 
-    public Search all() {
-        return new Search(articleRepository.searchAll());
+    public ArticleSearch all() {
+        return new ArticleSearch(articleRepository.searchAll());
     }
 
     public Article getBy(Identifier identifier) {

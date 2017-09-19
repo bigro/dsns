@@ -1,6 +1,5 @@
 package e2e.page;
 
-import com.example.dsns.search.Search;
 import org.fluentlenium.core.FluentPage;
 
 import static org.assertj.core.api.Assertions.assertThat;
