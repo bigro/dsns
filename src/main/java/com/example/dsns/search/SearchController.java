@@ -1,9 +1,12 @@
 package com.example.dsns.search;
 
+import com.example.dsns.article.Article;
+import com.example.dsns.article.Identifier;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -14,10 +17,17 @@ public class SearchController {
     private SearchService searchService;
 
     @GetMapping("list")
-    public String form(Model model) {
+    public String list(Model model) {
         Search search = searchService.all();
         model.addAttribute("search", search);
         return "search/list";
+    }
+
+    @GetMapping("{articleId}")
+    public String detail(@PathVariable("articleId") Identifier identifier, Model model) {
+        Article article = searchService.getBy(identifier);
+        model.addAttribute("article", article);
+        return "search/detail";
     }
 
 }

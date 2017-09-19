@@ -10,4 +10,6 @@ public interface ArticleMapper {
 	Long create(@Param("article") Article article);
 
     List<Article> searchAll();
+
+    Article getBy(@Param("identifier") Identifier identifier);
 }

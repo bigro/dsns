@@ -13,14 +13,19 @@
 <div layout:fragment="content" class="ui very padded container basic content">
     <h2 class="ui dividing header">人気記事</h2>
     <ul>
+
         <li class="article-list" th:each="article : ${search.getArticles().getList()}">
             <div class="ui card">
                 <div class="content">
                     <i class="right floated like icon"></i>
                     <i class="right floated star icon"></i>
+
                     <div class="header" th:text="${article.title}">電子工作とは</div>
                     <div class="description">
                         <p th:utext="${article.contents}">電子工作しましたよ</p>
+                    </div>
+                    <div class="ui right aligned">
+                        <a href="#" th:href="@{/articles/{articleId}(articleId=${article.identifier})}">続きを読む>></a>
                     </div>
                 </div>
                 <div class="extra content">

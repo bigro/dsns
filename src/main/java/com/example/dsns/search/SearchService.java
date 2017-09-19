@@ -14,4 +14,8 @@ public class SearchService {
     public Search all() {
         return new Search(articleRepository.searchAll());
     }
+
+    public Article getBy(Identifier identifier) {
+        return articleRepository.getBy(identifier);
+    }
 }

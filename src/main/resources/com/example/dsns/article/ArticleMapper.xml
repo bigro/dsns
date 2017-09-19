@@ -17,4 +17,9 @@
     <select id="searchAll" resultMap="article">
         SELECT * FROM article
     </select>
+
+    <select id="getBy" resultMap="article">
+        SELECT * FROM article
+        WHERE identifier = #{identifier.value}
+    </select>
 </mapper>

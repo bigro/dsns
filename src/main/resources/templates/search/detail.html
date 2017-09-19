@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html layout:decorate="~{fragments/layout}" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>記事一覧</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.css">
+    <link rel="stylesheet" href="../../static/css/common.css" th:href="@{/css/common.css}"/>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.13/semantic.min.js"></script>
+</head>
+<body>
+<div layout:fragment="content" class="ui very padded text container basic content" th:object="${article}">
+    <h2 class="ui dividing header" th:text="*{title}">人気記事</h2>
+    <div th:utext="*{contents}"></div>
+</div>
+</body>
+</html>

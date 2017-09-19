@@ -19,4 +19,8 @@ public class ArticleRepository {
 	public Articles searchAll() {
 		return new Articles(articleMapper.searchAll());
 	}
+
+	public Article getBy(Identifier identifier) {
+		return articleMapper.getBy(identifier);
+	}
 }
